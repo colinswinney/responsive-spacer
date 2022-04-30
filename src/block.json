@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "cjs-blocks/responsive-spacer",
+	"version": "1.0.0",
+	"title": "Responsive Spacer",
+	"category": "text",
+	"icon": "star-empty",
+	"description": "A responsive alternative to the native Spacer block",
+	"attributes": {
+		"message": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "responsive-spacer",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
