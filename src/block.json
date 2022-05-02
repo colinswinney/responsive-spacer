@@ -8,14 +8,16 @@
 	"icon": "star-empty",
 	"description": "A responsive alternative to the native Spacer block",
 	"attributes": {
-		"message": {
-			"type": "string",
-			"source": "text",
-			"selector": "div"
+		"height": {
+			"type": "number",
+			"default": 5
+		},
+		"heightInRem": {
+			"type": "string"
 		}
 	},
 	"supports": {
-		"html": false
+		"anchor": true
 	},
 	"textdomain": "responsive-spacer",
 	"editorScript": "file:./index.js",

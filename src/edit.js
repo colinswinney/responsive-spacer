@@ -1,37 +1,37 @@
 /**
- * WordPress components that create the necessary UI elements for the block
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-components/
+ * WordPress dependencies
  */
-import { TextControl } from "@wordpress/components";
+import { PanelBody, RangeControl } from "@wordpress/components";
+import { InspectorControls, useBlockProps } from "@wordpress/block-editor";
+import { __ } from "@wordpress/i18n";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
-import { useBlockProps } from "@wordpress/block-editor";
-
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @param {Object}   props               Properties passed to the function.
- * @param {Object}   props.attributes    Available block attributes.
- * @param {Function} props.setAttributes Function that updates individual attributes.
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit({ attributes, setAttributes }) {
-	const blockProps = useBlockProps();
+	// const blockProps = useBlockProps();
+
+	const MIN_SPACER_HEIGHT = 0.25;
+	const MAX_SPACER_HEIGHT = 20;
+
+	const updateHeight = (value) => {
+		setAttributes({
+			height: value,
+			heightInRem: value + "rem",
+		});
+	};
+
 	return (
-		<TextControl
-			{...blockProps}
-			value={attributes.message}
-			onChange={(val) => setAttributes({ message: val })}
-		/>
+		<>
+			<div {...useBlockProps()}></div>
+			<InspectorControls>
+				<PanelBody title={__("Responsive Spacer settings")}>
+					<RangeControl
+						label={__("Height in REM")}
+						min={MIN_SPACER_HEIGHT}
+						max={Math.max(MAX_SPACER_HEIGHT, attributes.height)}
+						value={attributes.height}
+						onChange={updateHeight}
+					/>
+				</PanelBody>
+			</InspectorControls>
+		</>
 	);
 }
