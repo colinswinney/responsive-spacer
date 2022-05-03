@@ -1,0 +1,7 @@
+.wp-block-cjsb-responsive-spacer {
+	@each $name, $bp in $grid-breakpoints {
+		@include media-breakpoint-only(#{$name}) {
+			height: var(--rs-#{$name}-height);
+		}
+	}
+}

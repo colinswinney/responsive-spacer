@@ -27,7 +27,7 @@ import save from "./save";
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType("cjs-blocks/responsive-spacer", {
+registerBlockType("cjsb/responsive-spacer", {
 	/**
 	 * Used to construct a preview for the block to be shown in the block inserter.
 	 */

@@ -1,19 +1,60 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "cjs-blocks/responsive-spacer",
+	"name": "cjsb/responsive-spacer",
 	"version": "1.0.0",
 	"title": "Responsive Spacer",
 	"category": "text",
 	"icon": "star-empty",
 	"description": "A responsive alternative to the native Spacer block",
 	"attributes": {
-		"height": {
+		"xsHeight": {
 			"type": "number",
 			"default": 5
 		},
-		"heightInRem": {
-			"type": "string"
+		"xsHeightInRem": {
+			"type": "string",
+			"default": "5rem"
+		},
+		"smHeight": {
+			"type": "number",
+			"default": 5
+		},
+		"smHeightInRem": {
+			"type": "string",
+			"default": "5rem"
+		},
+		"mdHeight": {
+			"type": "number",
+			"default": 5
+		},
+		"mdHeightInRem": {
+			"type": "string",
+			"default": "5rem"
+		},
+		"lgHeight": {
+			"type": "number",
+			"default": 5
+		},
+		"lgHeightInRem": {
+			"type": "string",
+			"default": "5rem"
+		},
+		"xlHeight": {
+			"type": "number",
+			"default": 5
+		},
+		"xlHeightInRem": {
+			"type": "string",
+			"default": "5rem"
+		},
+		"xxlHeight": {
+			"type": "number",
+			"default": 5
+		},
+		"xxlHeightInRem": {
+			"type": "string",
+			"default": "5rem"
 		}
 	},
 	"supports": {

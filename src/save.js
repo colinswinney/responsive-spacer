@@ -18,10 +18,19 @@ import { useBlockProps } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
+	const blockStyles = {
+		"--rs-xs-height": attributes.xsHeightInRem,
+		"--rs-sm-height": attributes.smHeightInRem,
+		"--rs-md-height": attributes.mdHeightInRem,
+		"--rs-lg-height": attributes.lgHeightInRem,
+		"--rs-xl-height": attributes.xlHeightInRem,
+		"--rs-xxl-height": attributes.xxlHeightInRem,
+	};
+
 	return (
 		<div
 			{...useBlockProps.save({
-				style: { height: attributes.heightInRem },
+				style: blockStyles,
 				"aria-hidden": true,
 			})}
 		/>
