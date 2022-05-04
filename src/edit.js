@@ -1,6 +1,3 @@
-/**
- * WordPress dependencies
- */
 import { PanelBody, RangeControl } from "@wordpress/components";
 import { InspectorControls, useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
